@@ -6,9 +6,12 @@ const packageJson = require('../package.json');
 
 const devConfig = {
     mode: 'development',
+    output: {
+        publicPath: 'http://localhost:8081/',
+    },
     devServer: {
         port: 8081,
-        historyApiFallback: { index: 'index.html' },
+        historyApiFallback: { index: '/index.html' },
     },
     plugins: [
         new HtmlWebpackPlugin({
